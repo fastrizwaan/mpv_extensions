@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+  <id>io.mpv.Mpv.Script.mpv-mpris</id>
+  <extends>io.mpv.Mpv</extends>
+  <name>mpv-mpris</name>
+  <summary>mpv-mpris is a plugin for mpv which allows control of the player using standard media keys</summary>
+  <url type="homepage">https://github.com/hoyon/mpv-mpris</url>
+  <project_license>MIT</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <update_contact>fast.rizwaan@gmail.com</update_contact>
+</component>
+

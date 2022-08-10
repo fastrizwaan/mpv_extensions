@@ -7,6 +7,7 @@ command: mpv
 rename-desktop-file: mpv.desktop
 rename-icon: mpv
 
+
 finish-args:
   - --share=ipc
   - --socket=x11
@@ -27,13 +28,13 @@ finish-args:
 
 # Script add-ons / extensions
 add-extensions:
-  
-  io.mpv.Mpv.scripts:
-  - directory: "etc/mpv/scripts"
-  - subdirectories: true
-  - merge-dirs: "etc/mpv/scripts"
-  - no-autodownload: true
-  - autodelete: true
+  - io.mpv.Mpv.Script:
+    - version: 21.08
+    - directory: "etc/mpv/scripts"
+    - merge-dirs: "etc/mpv/scripts"
+    - subdirectories: true
+    - no-autodownload: true
+    - autodelete: true
 
 
 cleanup:
@@ -445,6 +446,7 @@ modules:
       - install -D -m644 io.mpv.Mpv.appdata.xml /app/share/appdata/io.mpv.Mpv.appdata.xml
       # save screenshots at ~/Pictures/mpv
       - echo "screenshot-directory=~/Pictures/mpv" > /app/etc/mpv/mpv.conf
+      - install -d /app/etc/mpv/scripts
     sources:
       - type: archive
         url: https://github.com/mpv-player/mpv/archive/v0.34.1.tar.gz

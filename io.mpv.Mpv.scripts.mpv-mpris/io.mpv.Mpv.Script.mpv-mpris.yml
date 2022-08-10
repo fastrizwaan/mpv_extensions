@@ -1,9 +1,8 @@
-id: io.mpv.Mpv.scripts.mpv-mpris
+id: io.mpv.Mpv.Script.mpv-mpris
 build-extension: true
 runtime: io.mpv.Mpv
 runtime-version: stable
 branch: stable
-tags: "free"
 sdk: org.freedesktop.Sdk//21.08
 separate-locales: false
 appstream-compose: false
@@ -25,5 +24,6 @@ modules:
           url: https://api.github.com/repos/hoyon/mpv-mpris/releases/latest
           version-query: .name
           url-query: .tarball_url
-
+      - type: file
+        path: io.mpv.Mpv.Script.mpv-mpris.metainfo.xml
 
