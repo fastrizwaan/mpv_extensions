@@ -31,8 +31,8 @@ finish-args:
 add-extensions:
   io.mpv.Mpv.Script:
     subdirectories: true
-    directory: "/etc/mpv/scripts"
-    merge-dirs: "/etc/mpv/scripts"
+    directory: "etc/mpv/scripts"
+    merge-dirs: "etc/mpv/scripts"
     version: stable
     no-autodownload: false
     autodelete: true
