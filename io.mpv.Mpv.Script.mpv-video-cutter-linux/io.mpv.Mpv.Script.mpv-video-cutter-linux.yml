@@ -1,0 +1,31 @@
+id: io.mpv.Mpv.Script.mpv-video-cutter-linux
+#default-branch: stable
+runtime: io.mpv.Mpv
+runtime-version: stable
+branch: stable
+sdk: org.freedesktop.Sdk//21.08
+separate-locales: false
+build-extension: true
+appstream-compose: false
+
+build-options:
+  - prefix: "/app/etc/mpv/scripts"
+
+modules:
+
+
+  - name: mpv-video-cutter-linux
+    buildsystem: simple
+    build-commands:
+      - mkdir -pv /app/etc/mpv/scripts
+      - mkdir -pv /app/share/appdata
+      - install -Dm644 flatpak/* /app/etc/mpv/scripts
+      - install -Dm644 io.mpv.Mpv.Script.mpv-video-cutter-linux.metainfo.xml --target-directory=${FLATPAK_DEST}/share/metainfo
+    sources:
+      - type: archive
+        archive-type: tar
+        url: https://github.com/fastrizwaan/mpv-video-cutter-linux/archive/refs/tags/1.0.tar.gz
+        sha256: d8ab7930e09c4da0af07bb17b181b997f5fa15b1264c34ca65a29ee104a9f5ff
+      - type: file
+        path: io.mpv.Mpv.Script.mpv-video-cutter-linux.metainfo.xml
+

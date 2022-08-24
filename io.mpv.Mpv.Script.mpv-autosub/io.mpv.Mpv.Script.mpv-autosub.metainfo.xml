@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+  <id>io.mpv.Mpv.Script.mpv-autosub</id>
+  <extends>io.mpv.Mpv</extends>
+  <name>mpv-autosub extension</name>
+  <summary>mpv-autosub is a plugin to automatically download subtitles</summary>
+  <url type="homepage">https://github.com/fastrizwaan/mpv-autosub</url>
+  <project_license>MIT</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <releases>
+    <release version="1.0" date="2022-08-24"/>
+  </releases>
+</component>
+

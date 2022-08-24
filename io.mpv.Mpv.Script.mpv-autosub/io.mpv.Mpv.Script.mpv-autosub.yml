@@ -1,0 +1,30 @@
+id: io.mpv.Mpv.Script.mpv-autosub
+#default-branch: stable
+runtime: io.mpv.Mpv
+runtime-version: stable
+branch: stable
+sdk: org.freedesktop.Sdk//21.08
+separate-locales: false
+build-extension: true
+appstream-compose: false
+
+build-options:
+  - prefix: "/app/etc/mpv/scripts"
+
+modules:
+
+  - name: mpv-autosub
+    buildsystem: simple
+    build-commands:
+      - mkdir -pv /app/etc/mpv/scripts
+      - mkdir -pv /app/share/appdata
+      - install -Dm755 autosub.lua /app/etc/mpv/scripts
+      - install -Dm644 io.mpv.Mpv.Script.mpv-autosub.metainfo.xml --target-directory=${FLATPAK_DEST}/share/metainfo
+    sources:
+      - type: archive
+        archive-type: tar
+        url: https://github.com/fastrizwaan/mpv-autosub/archive/refs/tags/1.0.tar.gz
+        sha256: 62715e4088db7862ff21523801a3d668307edac58d6361400077897d59996417
+      - type: file
+        path: io.mpv.Mpv.Script.mpv-autosub.metainfo.xml
+

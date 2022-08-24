@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+  <id>io.mpv.Mpv.Script.mpv-video-cutter-linux</id>
+  <extends>io.mpv.Mpv</extends>
+  <name>mpv-video-cutter-linux extension</name>
+  <summary>mpv-video-cutter-linux is a plugin to cut video and concat automatically</summary>
+  <url type="homepage">https://github.com/fastrizwaan/mpv-video-cutter-linux</url>
+  <project_license>MIT</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <releases>
+    <release version="1.0" date="2022-08-24"/>
+  </releases>
+</component>
+

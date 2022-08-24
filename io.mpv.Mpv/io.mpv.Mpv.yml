@@ -4,6 +4,7 @@ runtime-version: '21.08'
 branch: stable
 sdk: org.freedesktop.Sdk
 command: mpv
+separate-locales: false
 rename-desktop-file: mpv.desktop
 rename-icon: mpv
 
@@ -28,13 +29,13 @@ finish-args:
 
 # Script add-ons / extensions
 add-extensions:
-  - io.mpv.Mpv.Script:
-    - version: 21.08
-    - directory: "etc/mpv/scripts"
-    - merge-dirs: "etc/mpv/scripts"
-    - subdirectories: true
-    - no-autodownload: true
-    - autodelete: true
+  io.mpv.Mpv.Script:
+    subdirectories: true
+    directory: "/etc/mpv/scripts"
+    merge-dirs: "/etc/mpv/scripts"
+    version: stable
+    no-autodownload: false
+    autodelete: true
 
 
 cleanup:
@@ -459,7 +460,20 @@ modules:
         path: io.mpv.Mpv.appdata.xml
 
 # Scripts for mpv
-
+  - name: mpv-mpris
+    no-autogen: true
+    make-install-args:
+      - SCRIPTS_DIR=/app/etc/mpv/scripts
+    sources:
+      - type: archive
+        archive-type: tar
+        url: https://api.github.com/repos/hoyon/mpv-mpris/tarball/0.8.1
+        sha256: 8e32e49d0ddd2fde9f85b91ffd4f8a863b9789310211c486a1a472711a433cc4
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/hoyon/mpv-mpris/releases/latest
+          version-query: .name
+          url-query: .tarball_url
 
   - name: bc
     build-options:
@@ -678,5 +692,4 @@ modules:
       - type: file
         url: https://files.pythonhosted.org/packages/d6/f6/d523ddbb9304fa3597101903c0004bdba50c495a1e0d355cdd763df6f2d8/subliminal-2.1.0-py3-none-any.whl
         sha256: c7751e7af83e8e80c924c2c596318d9e2535f249784a41840eaee5f4a4f49d79
-
 
